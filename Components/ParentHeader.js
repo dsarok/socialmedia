@@ -5,7 +5,7 @@ export default function ParentHeader() {
   return (
     <View
     style={{
-      paddingHorizontal: 10,
+      paddingHorizontal: '5%',
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -30,7 +30,6 @@ export default function ParentHeader() {
           borderColor: 'white',
           width:22,
           marginRight:10,
-          paddingHorizontal:0,
           alignItems:'center',
           borderRadius:20
         }}>

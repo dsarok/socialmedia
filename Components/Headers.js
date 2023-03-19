@@ -1,13 +1,12 @@
 import {View, Text, StyleSheet, Image, TextInput} from 'react-native';
 import React from 'react';
 
-export default function Headers() {
+export default function Headers({profilePic}) {
   return (
     <View style={styles.container}>
-      
       <View style={styles.avatarBox}>
         <Image
-          source={{uri: 'https://i.pravatar.cc/300'}}
+          source={{uri: profilePic}}
           style={styles.imageStyle}
         />
         <TextInput
@@ -15,9 +14,8 @@ export default function Headers() {
           placeholder={'Ask a question'}
           placeholderTextColor={'white'}
         />
-        <Text style={{position:'relative',right:27}}>🖼</Text>
+        <Text style={{position: 'relative', right: 27}}>🖼</Text>
       </View>
-      
     </View>
   );
 }
@@ -26,8 +24,9 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#283072',
     paddingVertical: 10,
-    paddingHorizontal: 10,
-    marginBottom:8
+    paddingHorizontal: '5%',
+    marginBottom: 8,
+    
   },
   heading: {
     fontSize: 14,
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
   avatarBox: {
     marginTop: 5,
     flexDirection: 'row',
-    alignItems:'center'
+    alignItems: 'center',
   },
   imageStyle: {
     height: 30,
@@ -48,12 +47,11 @@ const styles = StyleSheet.create({
     borderColor: 'white',
     width: '90%',
     borderRadius: 6,
-    backgroundColor:
-      'rgba(255, 255, 255, 0.2)',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
     marginStart: 4,
-    paddingLeft:10,
-    fontWeight:'600',
-    fontSize:10,
-    height:30
+    paddingLeft: 10,
+    fontWeight: '600',
+    fontSize: 10,
+    height: 30,
   },
 });
