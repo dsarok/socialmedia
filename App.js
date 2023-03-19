@@ -26,7 +26,7 @@ function App() {
       imageUrl: 'https://picsum.photos/200/300',
       profileUrl: 'https://i.pravatar.cc/300',
       name: 'kamelie amelia',
-      time: '5 min',
+      time: '2 day ago',
       description:
         'Lorem ipsum is simply dummy text the printing and typeset industry and this is what i am targetting text the printing and typeset',
     },

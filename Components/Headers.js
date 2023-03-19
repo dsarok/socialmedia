@@ -1,5 +1,6 @@
 import {View, Text, StyleSheet, Image, TextInput} from 'react-native';
 import React from 'react';
+import Octicons from 'react-native-vector-icons/Octicons';
 
 export default function Headers({profilePic}) {
   return (
@@ -14,7 +15,12 @@ export default function Headers({profilePic}) {
           placeholder={'Ask a question'}
           placeholderTextColor={'white'}
         />
-        <Text style={{position: 'relative', right: 27}}>🖼</Text>
+        <Text style={{position: 'relative', right: 27}}>
+        <Octicons
+          name="image"
+          style={{fontSize:15,color:'white'}}
+        />
+        </Text>
       </View>
     </View>
   );

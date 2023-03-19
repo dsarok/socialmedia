@@ -1,6 +1,6 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
-
+import OctIcon from 'react-native-vector-icons/Octicons'
 export default function ParentHeader() {
   return (
     <View
@@ -36,7 +36,10 @@ export default function ParentHeader() {
         <Text style={{fontSize:12,fontWeight:'bold'}}>❓</Text>
       </TouchableOpacity>
       <TouchableOpacity style={{justifyContent:"center"}}>
-        <Text style={{fontSize:14}}>🔔</Text>
+      <OctIcon
+        name="bell"
+        style={{fontSize:17,color:'white'}}
+      />
       </TouchableOpacity>
     </View>
   </View>
