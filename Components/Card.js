@@ -1,7 +1,9 @@
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 export default function Card({profileUrl, imageUrl, name, time, description}) {
+  const [likeStatus, setLikeStatus] = useState(false);
+  const [savedStatus, setSavedStatus] = useState(false);
   return (
     <View style={{marginTop: 10}}>
       <View style={styles.profile}>
@@ -11,10 +13,15 @@ export default function Card({profileUrl, imageUrl, name, time, description}) {
           <Text style={{fontWeight: '100', fontSize: 10}}>{time}</Text>
         </View>
       </View>
-      <Text numberOfLines={2} style={{fontSize: 12}}>
-        {description}
-      </Text>
-      <View style={{borderBottomWidth: 0.5, borderColor: '#D7D7D7'}}>
+      <View>
+        <Text
+          numberOfLines={2}
+          style={{fontSize: 12, marginBottom: imageUrl ? 0 : 10}}>
+          {description}
+        </Text>
+      </View>
+
+      {imageUrl && (
         <Image
           source={{uri: imageUrl}}
           style={{
@@ -24,7 +31,7 @@ export default function Card({profileUrl, imageUrl, name, time, description}) {
             borderRadius: 10,
           }}
         />
-      </View>
+      )}
       <View
         style={{
           height: 30,
@@ -32,32 +39,46 @@ export default function Card({profileUrl, imageUrl, name, time, description}) {
           justifyContent: 'space-between',
           alignItems: 'center',
           marginBottom: 10,
+          borderTopWidth: 0.5,
+          borderColor: '#D7D7D7',
         }}>
-        <TouchableOpacity style={{flexDirection:'row',alignItems:"center"}}>
+        <TouchableOpacity
+          style={{flexDirection: 'row', alignItems: 'center'}}
+          onPress={() => setLikeStatus(!likeStatus)}>
           <MaterialCommunityIcons
-            name="cards-heart-outline"
-            style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}
+            name={likeStatus ? 'heart' : 'cards-heart-outline'}
+            style={{
+              color: likeStatus ? 'red' : 'black',
+              fontSize: 18,
+              fontWeight: 'bold',
+            }}
           />
           <Text style={{fontSize: 11, fontWeight: '700'}}> Like</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={{flexDirection:'row',alignItems:"center"}}>
+        <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center'}}>
           <MaterialCommunityIcons
             name="comment-text-outline"
             style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}
           />
           <Text style={{fontSize: 11, fontWeight: '700'}}> Comment</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={{flexDirection:'row',alignItems:"center"}}>
-        <MaterialCommunityIcons
+        <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center'}}>
+          <MaterialCommunityIcons
             name="share-variant-outline"
             style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}
           />
           <Text style={{fontSize: 11, fontWeight: '700'}}> Share</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={{flexDirection:'row',alignItems:"center"}}>
+        <TouchableOpacity
+          style={{flexDirection: 'row', alignItems: 'center'}}
+          onPress={() => setSavedStatus(!savedStatus)}>
           <MaterialCommunityIcons
-            name="bookmark-outline"
-            style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}
+            name={savedStatus ? 'bookmark' : 'bookmark-outline'}
+            style={{
+              color: savedStatus ? '#B58B00' : 'black',
+              fontSize: 18,
+              fontWeight: 'bold',
+            }}
           />
           <Text style={{fontSize: 11, fontWeight: '700'}}></Text>
         </TouchableOpacity>

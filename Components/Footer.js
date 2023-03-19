@@ -17,9 +17,10 @@ export default function Footer() {
       }}>
 
       <TouchableOpacity style={{alignItems: 'center',height:40,justifyContent:'space-between'}}>
-        <AntDesign
-          name="home"
-          style={{color: 'black', fontSize: 20, fontWeight: 'bold'}}
+        <MaterialCommunityIcons
+
+          name="home-variant"
+          style={{color: 'coral', fontSize: 20, fontWeight: 'bold'}}
         />
         <Text style={{fontWeight:'100',fontSize:11}}>Home</Text>
       </TouchableOpacity>

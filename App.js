@@ -23,13 +23,21 @@ function App() {
         'Lorem ipsum is simply dummy text the printing and typesetting industry and this is what i am targetting text the printing and typeset',
     },
     {
-      imageUrl: 'https://picsum.photos/200/300',
+      // imageUrl: 'https://picsum.photos/200/300',
       profileUrl: 'https://i.pravatar.cc/300',
       name: 'kamelie amelia',
       time: '2 day ago',
       description:
         'Lorem ipsum is simply dummy text the printing and typeset industry and this is what i am targetting text the printing and typeset',
     },
+    {
+      imageUrl: 'https://picsum.photos/200/300',
+      profileUrl: 'https://i.pravatar.cc/300',
+      name: 'Ramesh amelia',
+      time: '5 month ago',
+      description:
+        'Lorem ipsum is simply dummy text the printing and typeset industry and this is what i am targetting text the printing and typeset',
+    }
   ];
   return (
     <>
